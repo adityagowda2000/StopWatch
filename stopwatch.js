@@ -4,6 +4,7 @@ secs = document.getElementsByClassName("Seconds");
 startbtn = document.getElementsByClassName("startbtn");
 stopbtn = document.getElementsByClassName("stopbtn");
 resetbtn = document.getElementsByClassName("resetbtn");
+let isStarted = false;
 let stopWatch;
 
 startbtn[0].onclick = () => {
@@ -19,14 +20,17 @@ resetbtn[0].onclick = () => {
 };
 
 function start() {
-  console.log("started");
-  clearInterval(stopWatch); //if start button is pressed multiple times then many intervals will be set to avoid it, we must clear all the intervals before it.
-  stopWatch = setInterval(updateTime, 1000);
+  if (!isStarted) {
+    console.log("started");
+    stopWatch = setInterval(updateTime, 1000);
+    isStarted = true;
+  }
 }
 
 function stop() {
   console.log("stopped");
   clearInterval(stopWatch);
+  isStarted = false;
 }
 
 function reset() {
@@ -35,6 +39,7 @@ function reset() {
   mins[0].innerHTML = "00";
   secs[0].innerHTML = "00";
   clearInterval(stopWatch);
+  isStarted = false;
 }
 
 function updateTime() {
