@@ -4,6 +4,7 @@ secs = document.getElementsByClassName("Seconds");
 startbtn = document.getElementsByClassName("startbtn");
 stopbtn = document.getElementsByClassName("stopbtn");
 resetbtn = document.getElementsByClassName("resetbtn");
+title = document.getElementsByTagName("title");
 let isStarted = false; //is the stopwatch stared already
 let stopWatch;
 let isResume = false; //is the start button modified to display resume
@@ -59,6 +60,7 @@ function updateTime() {
   h = Number(hours[0].innerHTML);
   m = Number(mins[0].innerHTML);
   s = Number(secs[0].innerHTML);
+  title[0].innerHTML = String(h) + ":" + String(m) + ":" + String(s); // now the document title will display the time and will change dynamically as the time changes
   if (s === 59) {
     if (m === 59) {
       mins[0].innerHTML = "00";
