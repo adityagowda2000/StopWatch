@@ -5,20 +5,24 @@ startbtn = document.getElementsByClassName("startbtn");
 stopbtn = document.getElementsByClassName("stopbtn");
 resetbtn = document.getElementsByClassName("resetbtn");
 title = document.getElementsByTagName("title");
+let audio = new Audio("click1.wav");
 let isStarted = false; //is the stopwatch stared already
 let stopWatch;
 let isResume = false; //is the start button modified to display resume
 
 startbtn[0].onclick = () => {
   start();
+  audio.play();
 };
 
 stopbtn[0].onclick = () => {
   stop();
+  audio.play();
 };
 
 resetbtn[0].onclick = () => {
   reset();
+  audio.play();
 };
 
 function start() {
