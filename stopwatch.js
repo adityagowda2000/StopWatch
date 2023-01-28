@@ -23,7 +23,7 @@ resetbtn[0].onclick = () => {
 function start() {
   if (!isStarted) {
     console.log("started");
-    stopWatch = setInterval(updateTime, 1000);
+    stopWatch = setInterval(updateTime, 1);
     isStarted = true;
     if (isResume) {
       startbtn[0].innerHTML = "Start";
@@ -59,7 +59,7 @@ function updateTime() {
   h = Number(hours[0].innerHTML);
   m = Number(mins[0].innerHTML);
   s = Number(secs[0].innerHTML);
-  if (s === 59) {
+  if (s === 99) {
     if (m === 59) {
       mins[0].innerHTML = "00";
       secs[0].innerHTML = "00";
