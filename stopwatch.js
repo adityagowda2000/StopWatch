@@ -52,6 +52,7 @@ function reset() {
   hours[0].innerHTML = "00";
   mins[0].innerHTML = "00";
   secs[0].innerHTML = "00";
+  title[0].innerHTML = "Stopwatch";
   clearInterval(stopWatch);
   isStarted = false;
   if (isResume) {
